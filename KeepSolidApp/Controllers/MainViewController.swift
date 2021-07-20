@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lineShadow: UIImageView!
     @IBOutlet weak var dailyCollection: UICollectionView!
     @IBOutlet weak var collectionHeader: UILabel!
+
     
     func getWeek()->[String]{
         var week = Array<String>()
@@ -43,24 +44,35 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dailyCollection.dataSource = self
+        dailyCollection.delegate = self
         
         let today =  DateFormatter()
         today.dateStyle = .medium
         today.timeStyle = .none
         todayLabel.text = today.string(from: Date())
         
-        DailyView.imageView.image = UIImage(named: "partlycloudy")
-        DailyView.tempLabel.text = String(format: "%@%@", "30", "\u{00B0}")
         lineShadow.image = UIImage(named:"line_shadow")
-        dailyCollection.dataSource = self
+        
         dailyCollection.register(UINib(nibName: "DailyCell", bundle: nil), forCellWithReuseIdentifier: "DailyCell")
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+    
     @IBAction func settingsClick(_ sender: UIButton) {
     }
     
 }
-//MARK: - Extension: CollectionView
+//MARK: - MainViewController: UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 7
@@ -79,6 +91,21 @@ extension MainViewController: UICollectionViewDataSource{
         return cell
     }
 }
-
-
-
+//MARK: -- MainViewController: UICollectionViewDelegate
+extension MainViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = getViewControllerByID("detailVC") as! DetailViewController
+//        vc.dataSource = self
+//        vc.setString = {
+//            return "Closure text"
+//        }
+        vc.data = menu.elements[indexPath.item]
+        navigationController?.show(vc, sender: self)
+    }
+}
+//MARK: -- MainViewController: DetailDataSource
+//extension MainViewController: DetailDataSource{
+//    func getString() -> String {
+//        return ""
+//    }
+//}

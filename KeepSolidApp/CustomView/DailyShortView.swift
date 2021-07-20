@@ -30,6 +30,8 @@ class DailyShortView: UIView{
         addSubview(mainView)
         mainView.frame = self.bounds
         mainView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        self.imageView.image = UIImage(named: "partlycloudy")
+        self.tempLabel.text = String(format: "%@%@", "30", "\u{00B0}")
     }
     
 }
