@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 July 2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ana-Ta-EeJ">
-                                <rect key="frame" x="31" y="78" width="109" height="26"/>
+                                <rect key="frame" x="31" y="78" width="227" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -129,6 +129,7 @@
                     <connections>
                         <outlet property="DailyView" destination="v2l-pO-l9g" id="F2B-wq-9sK"/>
                         <outlet property="TodayLabel" destination="ana-Ta-EeJ" id="CRH-d6-Y1O"/>
+                        <outlet property="collectionHeader" destination="RBV-bx-XBv" id="brp-Iv-LMn"/>
                         <outlet property="dailyCollection" destination="I6h-hz-Ldx" id="ZgN-Yg-1eD"/>
                         <outlet property="humidityDesc" destination="9GW-G1-NYe" id="9nb-TY-jGB"/>
                         <outlet property="humidityValue" destination="Wxx-mI-Kfk" id="zoM-Aq-3DV"/>

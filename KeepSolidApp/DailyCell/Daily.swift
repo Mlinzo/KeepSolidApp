@@ -22,8 +22,8 @@ class Menu{
         self.elements.append(d)
     }
     
-    init(image: String, temp: String, date: String) {
-       addDay(image: image, temp: temp, date: date)
+    init() {
+       
     }
     
 }
