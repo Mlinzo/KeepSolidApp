@@ -14,6 +14,10 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet weak var headLabel: UILabel!
     @IBOutlet weak var dailyView: DailyShortView!
+    @IBOutlet weak var morningView: DetailCustomView!
+    @IBOutlet weak var afternoonView: DetailCustomView!
+    @IBOutlet weak var eveningView: DetailCustomView!
+    @IBOutlet weak var nightView: DetailCustomView!
     
     
     var data: Elements?
@@ -27,7 +31,6 @@ class DetailViewController: UIViewController {
         today.dateStyle = .medium
         today.timeStyle = .none
         headLabel.text = today.string(from: Date())
-        
     }
 
 }
