@@ -31,5 +31,12 @@ class DetailCustomView: UIView {
         addSubview(view)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        background.image = UIImage(named: "morningrect")
-    }}
+    }
+    func setupView(feels: Float, temp: Float, backgroundImage: String) -> Void {
+        self.background.image = UIImage(named: backgroundImage)
+        self.tempValue.text = String(format: "%0.0f", temp)
+        self.feelsValue.text = String(format: "%0.0f", feels)
+    }
+}
+
+

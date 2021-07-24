@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DailyCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    func setupCell(elems: Elements){
-        self.imageView.image = elems.image
-        self.tempLabel.text = elems.temp
-        self.dateLabel.text = elems.date
+    func setupCell(daily: DailyModel, date: String){
+        self.imageView.image = UIImage(named: daily.weatherIcon)
+        self.tempLabel.text = String(format: "%0.0f", daily.dayTemp)
+        self.dateLabel.text = date
     }
     
     override func awakeFromNib() {

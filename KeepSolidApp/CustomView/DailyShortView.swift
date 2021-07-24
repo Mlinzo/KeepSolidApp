@@ -30,8 +30,10 @@ class DailyShortView: UIView{
         addSubview(mainView)
         mainView.frame = self.bounds
         mainView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        self.imageView.image = UIImage(named: "partlycloudy")
-        self.tempLabel.text = String(format: "%@%@", "30", "\u{00B0}")
     }
-    
+    func setupView(desc: String, temp: Float, image: String) -> Void {
+        self.imageView.image = UIImage(named: image)
+        self.tempLabel.text = String(format: "%0.0f%@", temp, "\u{00B0}")
+        self.deskLabel.text = desc
+    }
 }

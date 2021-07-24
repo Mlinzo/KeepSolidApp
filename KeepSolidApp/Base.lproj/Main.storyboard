@@ -165,7 +165,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FFo-rg-Uyv" customClass="DailyShortView" customModule="KeepSolidApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="124" width="414" height="91"/>
+                                <rect key="frame" x="12" y="124" width="391" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
