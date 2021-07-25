@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1B692C26AD801D007FF887 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692B26AD801D007FF887 /* Response.swift */; };
+		AA1B692F26AD8F98007FF887 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692E26AD8F98007FF887 /* ApiRequest.swift */; };
+		AA1B693126AD99F5007FF887 /* SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B693026AD99F5007FF887 /* SetData.swift */; };
 		AA3D3A3626A8A3340005B6EA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA3D3A3526A8A3340005B6EA /* RealmSwift */; };
 		AA3D3A3826A8A3340005B6EA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AA3D3A3726A8A3340005B6EA /* Realm */; };
 		AA3D3A3B26A8BC920005B6EA /* DetailCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D3A3A26A8BC920005B6EA /* DetailCustomView.swift */; };
@@ -49,6 +52,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA1B692B26AD801D007FF887 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		AA1B692E26AD8F98007FF887 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		AA1B693026AD99F5007FF887 /* SetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetData.swift; sourceTree = "<group>"; };
 		AA3D3A3A26A8BC920005B6EA /* DetailCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCustomView.swift; sourceTree = "<group>"; };
 		AA3D3A3C26A8BCB70005B6EA /* DetailCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCustomView.xib; sourceTree = "<group>"; };
 		AA56FE8A26A75225000BAA15 /* GetViewControllerByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewControllerByID.swift; sourceTree = "<group>"; };
@@ -103,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA1B692D26AD8F58007FF887 /* OpenWeatherApi */ = {
+			isa = PBXGroup;
+			children = (
+				AA1B692B26AD801D007FF887 /* Response.swift */,
+				AA1B692E26AD8F98007FF887 /* ApiRequest.swift */,
+			);
+			path = OpenWeatherApi;
+			sourceTree = "<group>";
+		};
 		AA3D3A3926A8BB100005B6EA /* DetailCustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +174,7 @@
 		AA7B703E26A0D16C00278F67 /* KeepSolidApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA1B692D26AD8F58007FF887 /* OpenWeatherApi */,
 				AA83F87726AC2FBF00A69D26 /* Realm */,
 				AA3D3A3926A8BB100005B6EA /* DetailCustomView */,
 				AABAB71F26A75D6C00120095 /* other */,
@@ -179,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				AA62B85326A9CE36007079DF /* RealmModels */,
+				AA1B693026AD99F5007FF887 /* SetData.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -339,13 +356,16 @@
 				AA62B85526A9CE52007079DF /* DailyModel.swift in Sources */,
 				AAC02B0A26A4AEAF0095632E /* DailyCell.swift in Sources */,
 				AA73690626A3186C004EE193 /* DailyShortView.swift in Sources */,
+				AA1B693126AD99F5007FF887 /* SetData.swift in Sources */,
 				AA7B704026A0D16C00278F67 /* AppDelegate.swift in Sources */,
 				AA3D3A3B26A8BC920005B6EA /* DetailCustomView.swift in Sources */,
 				AA62B85726A9CE65007079DF /* CurrentModel.swift in Sources */,
 				AA7B704226A0D16C00278F67 /* SceneDelegate.swift in Sources */,
 				AA62B85926A9CEC4007079DF /* MainModel.swift in Sources */,
+				AA1B692C26AD801D007FF887 /* Response.swift in Sources */,
 				AA56FE8B26A75225000BAA15 /* GetViewControllerByID.swift in Sources */,
 				AA83F87626AC2F8E00A69D26 /* Realm.safeWrite.swift in Sources */,
+				AA1B692F26AD8F98007FF887 /* ApiRequest.swift in Sources */,
 				AA56FE8D26A75295000BAA15 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

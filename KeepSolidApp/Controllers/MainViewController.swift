@@ -42,57 +42,21 @@ class MainViewController: UIViewController {
     }
     
     let realm = try! Realm()
-    var dailyModel = DailyModel()
-    var currentModel = CurrentModel()
     var mainModel = MainModel()
     var items: Results<MainModel>!
     
-    func setData() -> Void {
-        currentModel.temp = 12.0
-        currentModel.uvIndex = 12.0
-        currentModel.weatherIcon = "partlycloudy"
-        currentModel.weatherDesc = "bla"
-        currentModel.humidity = 12
-        currentModel.windSpeed = 12
-        currentModel.pressure = 12
-        
-        for _ in 1...7{
-            dailyModel.minTemp = 17.0
-            dailyModel.maxTemp = 17.0
-            dailyModel.mornTemp = 17.0
-            dailyModel.mornfeelsTemp = 17.0
-            dailyModel.dayTemp = 17.0
-            dailyModel.dayfeelsTemp = 17.0
-            dailyModel.eveTemp = 17.0
-            dailyModel.evefeelsTemp = 17.0
-            dailyModel.nightTemp = 17.0
-            dailyModel.nightfeelsTemp = 17.0
-            dailyModel.weatherIcon = "partlycloudy"
-            mainModel.daily.append(dailyModel)
-        }
-
-        mainModel.current = currentModel
-        
-        try! realm.write{
-            realm.add(mainModel)
-        }
-        
-        dailyCollection.reloadData()
+    override func loadView() {
+        super.loadView()
+        let apiurl = "https://api.openweathermap.org/data/2.5/onecall?lat=46.4775&lon=30.7326&units=metric&lang=en&exclude=hourly,minutely&appid=0ef853635aef314bc8966ae105fa06fd"
+        getData(from: apiurl)
     }
-    
-//    override func loadView() {
-//        super.loadView()
-//
-//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         items = realm.objects(MainModel.self)
-        
+
         dailyCollection.register(UINib(nibName: "DailyCell", bundle: nil), forCellWithReuseIdentifier: "DailyCell")
         dailyCollection.dataSource = self
         dailyCollection.delegate = self
-        
-        setData()
         
         humidityValue.text = String(format: "%d%%", items[0].current!.humidity)
         uvindexValue.text = String(format: "%0.0f", items[0].current!.uvIndex)
@@ -107,7 +71,6 @@ class MainViewController: UIViewController {
         todayLabel.text = today.string(from: Date())
         
         lineShadow.image = UIImage(named:"line_shadow")
-   
         
     }
     
@@ -134,10 +97,6 @@ extension MainViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let weekDate = getWeek()
-//        for i in 0...6{
-//            menu.addDay(image: "partlycloudy", temp: "\(30)", date: "\(weekDate[i])")
-//        }
-
 
         let cell = dailyCollection.dequeueReusableCell(withReuseIdentifier: "DailyCell", for: indexPath) as! DailyCell
         cell.setupCell(daily: items[0].daily[indexPath.item], date: weekDate[indexPath.item])

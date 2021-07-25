@@ -217,6 +217,85 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSy-uh-Jwe">
+                                <rect key="frame" x="-1" y="532" width="415" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxn-Oh-xod">
+                                <rect key="frame" x="117" y="576" width="67" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wind" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U34-dL-2IV">
+                                <rect key="frame" x="117" y="593" width="67" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wind" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x77-2X-7zF">
+                                <rect key="frame" x="75" y="576" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gi-Wm-SBz">
+                                <rect key="frame" x="268" y="575" width="70" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8Y-cY-FuP">
+                                <rect key="frame" x="268" y="592" width="70" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="humidity" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z62-w0-cZm">
+                                <rect key="frame" x="226" y="575" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab1-2s-Z98">
+                                <rect key="frame" x="268" y="640" width="70" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pressure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lef-oJ-L3Q">
+                                <rect key="frame" x="268" y="657" width="70" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pressure" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCF-MD-9Qh">
+                                <rect key="frame" x="236" y="645" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztd-w3-rFL">
+                                <rect key="frame" x="117" y="640" width="67" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UV Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qN-G3-AX2">
+                                <rect key="frame" x="117" y="657" width="67" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="uvindex" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ap4-IO-qpr">
+                                <rect key="frame" x="75" y="640" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WPW-y1-CT3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -225,10 +304,27 @@
                     <connections>
                         <outlet property="afternoonView" destination="oVB-Ix-rFe" id="Q30-CU-pgK"/>
                         <outlet property="dailyView" destination="FFo-rg-Uyv" id="chw-B1-npa"/>
+                        <outlet property="detailsLabel" destination="tSy-uh-Jwe" id="QEd-dS-AXa"/>
                         <outlet property="eveningView" destination="Zh8-7G-fZp" id="FtC-yK-bdh"/>
                         <outlet property="headLabel" destination="UVv-52-ZRB" id="XuG-VB-8RE"/>
+                        <outlet property="humidityImage" destination="z62-w0-cZm" id="ggU-xQ-VpC"/>
+                        <outlet property="humidityLabel" destination="F8Y-cY-FuP" id="0WG-77-JrU"/>
+                        <outlet property="humidityValue" destination="7gi-Wm-SBz" id="HyQ-ZY-JrU"/>
+                        <outlet property="maxLabel" destination="Ta6-Au-fYV" id="UKN-Ee-mWB"/>
+                        <outlet property="maxValue" destination="tCA-fc-Grv" id="BhI-tv-hS0"/>
+                        <outlet property="minLabel" destination="Mrg-rO-u1Y" id="pBZ-nN-tqL"/>
+                        <outlet property="minValue" destination="sQf-1Z-egR" id="C84-Xj-QQv"/>
                         <outlet property="morningView" destination="o4F-OU-ctu" id="kkw-7M-0jE"/>
                         <outlet property="nightView" destination="Ke3-AS-f8m" id="m4f-Zn-xTl"/>
+                        <outlet property="pressureImage" destination="YCF-MD-9Qh" id="4d4-CQ-fMp"/>
+                        <outlet property="pressureLabel" destination="Lef-oJ-L3Q" id="0Aa-Dp-isA"/>
+                        <outlet property="pressureValue" destination="Ab1-2s-Z98" id="UsH-cw-d5q"/>
+                        <outlet property="uvindexImage" destination="ap4-IO-qpr" id="VQD-SX-w4h"/>
+                        <outlet property="uvindexLabel" destination="9qN-G3-AX2" id="NtN-Yq-Gfz"/>
+                        <outlet property="uvindexValue" destination="ztd-w3-rFL" id="uWk-I1-9hh"/>
+                        <outlet property="windImage" destination="x77-2X-7zF" id="uGh-so-MBy"/>
+                        <outlet property="windLabel" destination="U34-dL-2IV" id="nzx-Ry-poY"/>
+                        <outlet property="windValue" destination="Jxn-Oh-xod" id="zt0-uI-hxa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NjY-78-CNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -253,7 +349,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="humidity" width="32" height="32"/>
+        <image name="pressure" width="24" height="24"/>
         <image name="settingslogo" width="20" height="20"/>
+        <image name="uvindex" width="32" height="32"/>
+        <image name="wind" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
