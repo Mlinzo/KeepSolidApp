@@ -53,7 +53,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         items = realm.objects(MainModel.self)
-
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
         dailyCollection.register(UINib(nibName: "DailyCell", bundle: nil), forCellWithReuseIdentifier: "DailyCell")
         dailyCollection.dataSource = self
         dailyCollection.delegate = self

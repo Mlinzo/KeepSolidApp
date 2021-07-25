@@ -9,7 +9,6 @@ import Foundation
 import RealmSwift
 
 let realm = try! Realm()
-var dailyModel = DailyModel()
 var currentModel = CurrentModel()
 var mainModel = MainModel()
     
@@ -24,7 +23,8 @@ func setData(data: Response) -> Void {
     
     mainModel.current = currentModel
     
-    for i in 1...6{
+    for i in 0...6{
+        let dailyModel = DailyModel()
         dailyModel.minTemp = Float(data.daily[i].temp.min)
         dailyModel.maxTemp = Float(data.daily[i].temp.max)
         dailyModel.mornTemp = Float(data.daily[i].temp.morn)
@@ -40,6 +40,7 @@ func setData(data: Response) -> Void {
     }
 
     try! realm.write{
+        realm.deleteAll()
         realm.add(mainModel)
     }
     
