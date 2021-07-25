@@ -32,7 +32,8 @@ class DailyShortView: UIView{
         mainView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
     func setupView(desc: String, temp: Float, image: String) -> Void {
-        self.imageView.image = UIImage(named: image)
+        let url = URL(string: "http://openweathermap.org/img/w/\(image).png")
+        self.imageView.load(url: url!)
         self.tempLabel.text = String(format: "%0.0f%@", temp, "\u{00B0}")
         self.deskLabel.text = desc
     }

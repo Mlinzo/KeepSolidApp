@@ -13,9 +13,10 @@ class DailyCell: UICollectionViewCell {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    func setupCell(daily: DailyModel, date: String){
-        self.imageView.image = UIImage(named: daily.weatherIcon)
-        self.tempLabel.text = String(format: "%0.0f", daily.dayTemp)
+    func setupCell(image: String, temp: Float, date: String){
+        let url = URL(string: "http://openweathermap.org/img/w/\(image).png")
+        self.imageView.load(url: url!)
+        self.tempLabel.text = String(format: "%0.0f%@", temp,"\u{00B0}")
         self.dateLabel.text = date
     }
     

@@ -35,6 +35,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pressureValue: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     
+    var dayIndex: Int?
+    var day: String?
+    
     let realm = try! Realm()
     var items: Results<MainModel>!
     
@@ -42,18 +45,26 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         items = realm.objects(MainModel.self)
         
-        dailyView.setupView(desc: items[0].current!.weatherDesc, temp: items[0].current!.temp, image: items[0].current!.weatherIcon)
-
+        if items.count != 0 {
+            dailyView.setupView(desc: items[0].current!.weatherDesc, temp: items[0].current!.temp, image: items[0].current!.weatherIcon)
+            
+            morningView.setupView(feels: items[0].daily[dayIndex!].mornfeelsTemp, temp: items[0].daily[dayIndex!].mornTemp, backgroundImage: "morningrect")
+            afternoonView.setupView(feels: items[0].daily[dayIndex!].dayfeelsTemp, temp: items[0].daily[dayIndex!].dayTemp, backgroundImage: "afternoonrect")
+            eveningView.setupView(feels: items[0].daily[dayIndex!].evefeelsTemp, temp: items[0].daily[dayIndex!].eveTemp, backgroundImage: "eveningrect")
+            nightView.setupView(feels: items[0].daily[dayIndex!].nightfeelsTemp, temp: items[0].daily[dayIndex!].nightTemp, backgroundImage: "nightrect")
+            
+            humidityValue.text = String(items[0].daily[dayIndex!].humidity)+"%"
+            windValue.text = String(items[0].daily[dayIndex!].wind)+" kmh"
+            uvindexValue.text = String(items[0].daily[dayIndex!].uvindex)
+            pressureValue.text = String(items[0].daily[dayIndex!].pressure)+" hPa"
+            
+            minValue.text = String(Int(items[0].daily[dayIndex!].minTemp))+"\u{00B0}"
+            maxValue.text = String(Int(items[0].daily[dayIndex!].maxTemp))+"\u{00B0}"
         
-        let today =  DateFormatter()
-        today.dateStyle = .medium
-        today.timeStyle = .none
-        headLabel.text = today.string(from: Date())
+        }
         
-        morningView.setupView(feels: items[0].daily[0].mornfeelsTemp, temp: items[0].daily[0].mornTemp, backgroundImage: "morningrect") //daily[0] - day what we need
-        afternoonView.setupView(feels: items[0].daily[0].dayfeelsTemp, temp: items[0].daily[0].dayTemp, backgroundImage: "afternoonrect") //daily[0] - day what we need
-        eveningView.setupView(feels: items[0].daily[0].evefeelsTemp, temp: items[0].daily[0].eveTemp, backgroundImage: "eveningrect") //daily[0] - day what we need
-        nightView.setupView(feels: items[0].daily[0].nightfeelsTemp, temp: items[0].daily[0].nightTemp, backgroundImage: "nightrect") //daily[0] - day what we need
+        headLabel.text = day!
+        
     }
 
 }

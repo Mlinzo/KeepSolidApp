@@ -16,6 +16,7 @@
 		AA3D3A3D26A8BCB70005B6EA /* DetailCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3D3A3C26A8BCB70005B6EA /* DetailCustomView.xib */; };
 		AA56FE8B26A75225000BAA15 /* GetViewControllerByID.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56FE8A26A75225000BAA15 /* GetViewControllerByID.swift */; };
 		AA56FE8D26A75295000BAA15 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA56FE8C26A75295000BAA15 /* DetailViewController.swift */; };
+		AA60ABDD26ADFDEF00C6CC54 /* UIImageView+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA60ABDC26ADFDEF00C6CC54 /* UIImageView+Load.swift */; };
 		AA62B85526A9CE52007079DF /* DailyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62B85426A9CE52007079DF /* DailyModel.swift */; };
 		AA62B85726A9CE65007079DF /* CurrentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62B85626A9CE65007079DF /* CurrentModel.swift */; };
 		AA62B85926A9CEC4007079DF /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62B85826A9CEC4007079DF /* MainModel.swift */; };
@@ -59,6 +60,7 @@
 		AA3D3A3C26A8BCB70005B6EA /* DetailCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCustomView.xib; sourceTree = "<group>"; };
 		AA56FE8A26A75225000BAA15 /* GetViewControllerByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewControllerByID.swift; sourceTree = "<group>"; };
 		AA56FE8C26A75295000BAA15 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AA60ABDC26ADFDEF00C6CC54 /* UIImageView+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Load.swift"; sourceTree = "<group>"; };
 		AA62B85426A9CE52007079DF /* DailyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyModel.swift; sourceTree = "<group>"; };
 		AA62B85626A9CE65007079DF /* CurrentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentModel.swift; sourceTree = "<group>"; };
 		AA62B85826A9CEC4007079DF /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				AA56FE8A26A75225000BAA15 /* GetViewControllerByID.swift */,
 				AA83F87526AC2F8E00A69D26 /* Realm.safeWrite.swift */,
+				AA60ABDC26ADFDEF00C6CC54 /* UIImageView+Load.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				AA7B704026A0D16C00278F67 /* AppDelegate.swift in Sources */,
 				AA3D3A3B26A8BC920005B6EA /* DetailCustomView.swift in Sources */,
 				AA62B85726A9CE65007079DF /* CurrentModel.swift in Sources */,
+				AA60ABDD26ADFDEF00C6CC54 /* UIImageView+Load.swift in Sources */,
 				AA7B704226A0D16C00278F67 /* SceneDelegate.swift in Sources */,
 				AA62B85926A9CEC4007079DF /* MainModel.swift in Sources */,
 				AA1B692C26AD801D007FF887 /* Response.swift in Sources */,

@@ -22,5 +22,11 @@ class DailyModel: Object {
     @Persisted var nightTemp: Float = 0.0
     @Persisted var nightfeelsTemp: Float = 0.0
     
+    @Persisted var wind: Int = 0
+    @Persisted var humidity: Int = 0
+    @Persisted var uvindex: Int = 0
+    @Persisted var pressure: Int = 0
+    
+    
     @Persisted var weatherIcon: String = "" //String???
 }

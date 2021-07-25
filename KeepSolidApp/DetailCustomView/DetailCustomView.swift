@@ -34,8 +34,8 @@ class DetailCustomView: UIView {
     }
     func setupView(feels: Float, temp: Float, backgroundImage: String) -> Void {
         self.background.image = UIImage(named: backgroundImage)
-        self.tempValue.text = String(format: "%0.0f", temp)
-        self.feelsValue.text = String(format: "%0.0f", feels)
+        self.tempValue.text = String(format: "%0.0f%@", temp,"\u{00B0}")
+        self.feelsValue.text = String(format: "%0.0f%@", feels,"\u{00B0}")
     }
 }
 

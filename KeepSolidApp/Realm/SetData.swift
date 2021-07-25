@@ -25,6 +25,7 @@ func setData(data: Response) -> Void {
     
     for i in 0...6{
         let dailyModel = DailyModel()
+        
         dailyModel.minTemp = Float(data.daily[i].temp.min)
         dailyModel.maxTemp = Float(data.daily[i].temp.max)
         dailyModel.mornTemp = Float(data.daily[i].temp.morn)
@@ -36,6 +37,12 @@ func setData(data: Response) -> Void {
         dailyModel.nightTemp = Float(data.daily[i].temp.night)
         dailyModel.nightfeelsTemp = Float(data.daily[i].feels_like.night)
         dailyModel.weatherIcon = data.daily[i].weather[0].icon
+        dailyModel.wind = Int(data.daily[i].wind_speed)
+        dailyModel.humidity = data.daily[i].humidity
+        dailyModel.uvindex = Int(data.daily[i].uvi)
+        dailyModel.pressure = data.daily[i].pressure
+        
+        
         mainModel.daily.append(dailyModel)
     }
 
