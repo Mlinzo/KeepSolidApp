@@ -26,20 +26,35 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lineShadow: UIImageView!
     @IBOutlet weak var dailyCollection: UICollectionView!
     @IBOutlet weak var collectionHeader: UILabel!
+    
+    @IBOutlet weak var unitsValue: UILabel!
+    @IBOutlet weak var languageValue: UILabel!
+    @IBOutlet weak var unitsView: UIView!
+    @IBOutlet weak var languageView: UIView!
+    
+    @IBOutlet var mainViewController: UIView!
+    @IBOutlet weak var settingsView: UIView!
 
+    @IBOutlet weak var detailNavBar: UINavigationBar!
+    @IBOutlet weak var detailPicker: UIPickerView!
+    
+  
+    
     
     func getWeek()->[String]{
         var week = Array<String>()
+        let weekDayNumber = Date().dayNumberOfWeek()!
         for i in 0...6{
-            let now = Date().addingTimeInterval(TimeInterval(86400*i))
+            let currentday = Date().addingTimeInterval(TimeInterval(86400*i-86400*(weekDayNumber-1)+86400))
             let formatter = DateFormatter()
             formatter.dateStyle = .medium
             formatter.timeStyle = .none
-            let dateString = formatter.string(from: now)
+            let dateString = formatter.string(from: currentday)
             week.append(dateString)
         }
         return week
     }
+    
     
     let realm = try! Realm()
     var mainModel = MainModel()
@@ -54,6 +69,13 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         items = realm.objects(MainModel.self)
         
+        let xPosition = settingsView.frame.origin.x
+        let yPosition = settingsView.frame.origin.y + 600
+        let width = settingsView.frame.size.width
+        let height = settingsView.frame.size.height
+        UIView.animate(withDuration: 0, animations: {
+            self.settingsView.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
+        })
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         dailyCollection.register(UINib(nibName: "DailyCell", bundle: nil), forCellWithReuseIdentifier: "DailyCell")
@@ -88,10 +110,57 @@ class MainViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    var settingsOnScreen = false
     
-    @IBAction func settingsClick(_ sender: UIButton) {
+    func upSettingsView(){
+        settingsOnScreen = true
+        let xPosition = settingsView.frame.origin.x
+        let yPosition = settingsView.frame.origin.y - 600 // Slide Up - Xpx
+
+        let width = settingsView.frame.size.width
+        let height = settingsView.frame.size.height
+
+        UIView.animate(withDuration: 0.5, animations: {
+            self.settingsView.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
+        })
+    }
+    func downSettingsView() {
+        settingsOnScreen = false
+        let xPosition = settingsView.frame.origin.x
+        let yPosition = settingsView.frame.origin.y + 600 // Slide Up - Xpx
+
+        let width = settingsView.frame.size.width
+        let height = settingsView.frame.size.height
+
+        UIView.animate(withDuration: 0.5, animations: {
+            self.settingsView.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
+        })
     }
     
+    @IBAction func settingsClick(_ sender: UIButton) {
+        if(settingsOnScreen == false){
+            upSettingsView()
+        }
+    }
+  
+    @IBAction func settingsUpDoneClick(_ sender: Any) {
+        downSettingsView()
+    }
+    
+    @IBAction func settingsCancelClick(_ sender: Any) {
+        downSettingsView()
+    }
+    
+    
+    @IBAction func unitsClicked(_ sender: Any) {
+        detailPicker.isHidden = !detailPicker.isHidden
+        detailNavBar.isHidden = !detailNavBar.isHidden
+    }
+    
+    @IBAction func languageClicked(_ sender: Any) {
+        detailPicker.isHidden = !detailPicker.isHidden
+        detailNavBar.isHidden = !detailNavBar.isHidden
+    }
 }
 //MARK: - MainViewController: UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource{
@@ -109,6 +178,7 @@ extension MainViewController: UICollectionViewDataSource{
         }
         return cell
     }
+    
 }
 //MARK: -- MainViewController: UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate{
@@ -121,4 +191,3 @@ extension MainViewController: UICollectionViewDelegate{
         
     }
 }
-

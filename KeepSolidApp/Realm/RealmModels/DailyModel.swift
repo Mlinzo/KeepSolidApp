@@ -28,5 +28,6 @@ class DailyModel: Object {
     @Persisted var pressure: Int = 0
     
     
-    @Persisted var weatherIcon: String = "" //String???
+    @Persisted var weatherIcon: String = ""
+    @Persisted var weatherDesc: String = ""
 }

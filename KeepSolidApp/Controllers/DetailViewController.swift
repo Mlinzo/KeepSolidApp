@@ -45,8 +45,12 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         items = realm.objects(MainModel.self)
         
+        afternoonView.timeLabel.text = "Afternoon"
+        eveningView.timeLabel.text = "Evening"
+        nightView.timeLabel.text = "Night"
+
         if items.count != 0 {
-            dailyView.setupView(desc: items[0].current!.weatherDesc, temp: items[0].current!.temp, image: items[0].current!.weatherIcon)
+            dailyView.setupView(desc: items[0].daily[dayIndex!].weatherDesc, temp: items[0].daily[dayIndex!].dayTemp, image: items[0].daily[dayIndex!].weatherIcon)
             
             morningView.setupView(feels: items[0].daily[dayIndex!].mornfeelsTemp, temp: items[0].daily[dayIndex!].mornTemp, backgroundImage: "morningrect")
             afternoonView.setupView(feels: items[0].daily[dayIndex!].dayfeelsTemp, temp: items[0].daily[dayIndex!].dayTemp, backgroundImage: "afternoonrect")

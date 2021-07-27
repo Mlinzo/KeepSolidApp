@@ -41,7 +41,7 @@ func setData(data: Response) -> Void {
         dailyModel.humidity = data.daily[i].humidity
         dailyModel.uvindex = Int(data.daily[i].uvi)
         dailyModel.pressure = data.daily[i].pressure
-        
+        dailyModel.weatherDesc = data.daily[i].weather[0].description
         
         mainModel.daily.append(dailyModel)
     }

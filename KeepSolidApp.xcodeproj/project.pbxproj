@@ -10,6 +10,7 @@
 		AA1B692C26AD801D007FF887 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692B26AD801D007FF887 /* Response.swift */; };
 		AA1B692F26AD8F98007FF887 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692E26AD8F98007FF887 /* ApiRequest.swift */; };
 		AA1B693126AD99F5007FF887 /* SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B693026AD99F5007FF887 /* SetData.swift */; };
+		AA207A3226B030C800DA2E47 /* Date.dayNumberOfWeek .swift in Sources */ = {isa = PBXBuildFile; fileRef = AA207A3126B030C800DA2E47 /* Date.dayNumberOfWeek .swift */; };
 		AA3D3A3626A8A3340005B6EA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA3D3A3526A8A3340005B6EA /* RealmSwift */; };
 		AA3D3A3826A8A3340005B6EA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AA3D3A3726A8A3340005B6EA /* Realm */; };
 		AA3D3A3B26A8BC920005B6EA /* DetailCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D3A3A26A8BC920005B6EA /* DetailCustomView.swift */; };
@@ -56,6 +57,7 @@
 		AA1B692B26AD801D007FF887 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AA1B692E26AD8F98007FF887 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		AA1B693026AD99F5007FF887 /* SetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetData.swift; sourceTree = "<group>"; };
+		AA207A3126B030C800DA2E47 /* Date.dayNumberOfWeek .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date.dayNumberOfWeek .swift"; sourceTree = "<group>"; };
 		AA3D3A3A26A8BC920005B6EA /* DetailCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCustomView.swift; sourceTree = "<group>"; };
 		AA3D3A3C26A8BCB70005B6EA /* DetailCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCustomView.xib; sourceTree = "<group>"; };
 		AA56FE8A26A75225000BAA15 /* GetViewControllerByID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewControllerByID.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				AA56FE8A26A75225000BAA15 /* GetViewControllerByID.swift */,
 				AA83F87526AC2F8E00A69D26 /* Realm.safeWrite.swift */,
 				AA60ABDC26ADFDEF00C6CC54 /* UIImageView+Load.swift */,
+				AA207A3126B030C800DA2E47 /* Date.dayNumberOfWeek .swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				AA1B692C26AD801D007FF887 /* Response.swift in Sources */,
 				AA56FE8B26A75225000BAA15 /* GetViewControllerByID.swift in Sources */,
 				AA83F87626AC2F8E00A69D26 /* Realm.safeWrite.swift in Sources */,
+				AA207A3226B030C800DA2E47 /* Date.dayNumberOfWeek .swift in Sources */,
 				AA1B692F26AD8F98007FF887 /* ApiRequest.swift in Sources */,
 				AA56FE8D26A75295000BAA15 /* DetailViewController.swift in Sources */,
 			);
