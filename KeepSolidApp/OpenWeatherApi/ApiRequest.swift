@@ -7,7 +7,7 @@
 
 import Foundation
 
-func getData(from url: String){
+func getData(from url: String, sender: MainViewController){
     let dataTask = URLSession.shared.dataTask(with: URL(string: url)!){ data, _, _ in
         guard let jsonData = data else{
             return
@@ -15,7 +15,7 @@ func getData(from url: String){
         do {
             let decoder = JSONDecoder()
             let apiResponse = try decoder.decode(Response.self, from: jsonData)
-            setData(data: apiResponse)
+            setData(data: apiResponse, sender: sender)
         }catch {
             print(error)
         }

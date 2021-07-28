@@ -38,32 +38,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var detailNavBar: UINavigationBar!
     @IBOutlet weak var detailPicker: UIPickerView!
     
-  
-    
-    
-    func getWeek()->[String]{
-        var week = Array<String>()
-        let weekDayNumber = Date().dayNumberOfWeek()!
-        for i in 0...6{
-            let currentday = Date().addingTimeInterval(TimeInterval(86400*i-86400*(weekDayNumber-1)+86400))
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .none
-            let dateString = formatter.string(from: currentday)
-            week.append(dateString)
-        }
-        return week
-    }
-    
+    @IBOutlet weak var waitScreen: UIView!
     
     let realm = try! Realm()
-    var mainModel = MainModel()
     var items: Results<MainModel>!
     
     override func loadView() {
         super.loadView()
         let apiurl = "https://api.openweathermap.org/data/2.5/onecall?lat=46.4775&lon=30.7326&units=metric&lang=en&exclude=hourly,minutely&appid=0ef853635aef314bc8966ae105fa06fd"
-        getData(from: apiurl)
+        getData(from: apiurl, sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,27 +60,20 @@ class MainViewController: UIViewController {
             self.settingsView.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
         })
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
         dailyCollection.register(UINib(nibName: "DailyCell", bundle: nil), forCellWithReuseIdentifier: "DailyCell")
         dailyCollection.dataSource = self
         dailyCollection.delegate = self
         if items.count != 0 {
-            
-            humidityValue.text = String(format: "%d%%", items[0].current!.humidity)
-            uvindexValue.text = String(format: "%0.0f", items[0].current!.uvIndex)
-            windValue.text = String(format: "%d kmh", items[0].current!.windSpeed)
-            
-            DailyView.setupView(desc: items[0].current!.weatherDesc , temp: items[0].current!.temp, image: items[0].current!.weatherIcon)
-        }
+            setupViewController(self)
 
-        
-        
-        let today =  DateFormatter()
-        today.dateStyle = .medium
-        today.timeStyle = .none
-        todayLabel.text = today.string(from: Date())
-        
-        lineShadow.image = UIImage(named:"line_shadow")
+//            humidityValue.text = String(format: "%d%%", items[0].current!.humidity)
+//            uvindexValue.text = String(format: "%0.0f", items[0].current!.uvIndex)
+//            windValue.text = String(format: "%d kmh", items[0].current!.windSpeed)
+//            lineShadow.image = UIImage(named:"line_shadow")
+//            DailyView.setupView(desc: items[0].current!.weatherDesc , temp: items[0].current!.temp, image: items[0].current!.weatherIcon)
+//            todayLabel.text = todayString()
+        }
         
     }
     

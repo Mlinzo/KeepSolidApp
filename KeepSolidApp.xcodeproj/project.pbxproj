@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA01AFE426B1F837008962BF /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01AFE326B1F837008962BF /* SetupViewController.swift */; };
+		AA01AFE726B1F9E3008962BF /* TodayString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01AFE626B1F9E3008962BF /* TodayString.swift */; };
+		AA01AFE926B203C1008962BF /* GetWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01AFE826B203C1008962BF /* GetWeek.swift */; };
 		AA1B692C26AD801D007FF887 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692B26AD801D007FF887 /* Response.swift */; };
 		AA1B692F26AD8F98007FF887 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692E26AD8F98007FF887 /* ApiRequest.swift */; };
 		AA1B693126AD99F5007FF887 /* SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B693026AD99F5007FF887 /* SetData.swift */; };
@@ -29,7 +32,6 @@
 		AA7B704726A0D16C00278F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7B704526A0D16C00278F67 /* Main.storyboard */; };
 		AA7B704926A0D16D00278F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA7B704826A0D16D00278F67 /* Assets.xcassets */; };
 		AA7B704C26A0D16D00278F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7B704A26A0D16D00278F67 /* LaunchScreen.storyboard */; };
-		AA83F87626AC2F8E00A69D26 /* Realm.safeWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA83F87526AC2F8E00A69D26 /* Realm.safeWrite.swift */; };
 		AAC02B0A26A4AEAF0095632E /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC02B0826A4AEAF0095632E /* DailyCell.swift */; };
 		AAC02B0B26A4AEAF0095632E /* DailyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC02B0926A4AEAF0095632E /* DailyCell.xib */; };
 		AAF590A026A184B900DED2B6 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF5908D26A184B900DED2B6 /* Montserrat-LightItalic.ttf */; };
@@ -54,6 +56,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA01AFE326B1F837008962BF /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		AA01AFE626B1F9E3008962BF /* TodayString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayString.swift; sourceTree = "<group>"; };
+		AA01AFE826B203C1008962BF /* GetWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeek.swift; sourceTree = "<group>"; };
 		AA1B692B26AD801D007FF887 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AA1B692E26AD8F98007FF887 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		AA1B693026AD99F5007FF887 /* SetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetData.swift; sourceTree = "<group>"; };
@@ -76,7 +81,6 @@
 		AA7B704826A0D16D00278F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA7B704B26A0D16D00278F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA7B704D26A0D16D00278F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA83F87526AC2F8E00A69D26 /* Realm.safeWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.safeWrite.swift; sourceTree = "<group>"; };
 		AAC02B0826A4AEAF0095632E /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		AAC02B0926A4AEAF0095632E /* DailyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCell.xib; sourceTree = "<group>"; };
 		AAF5908D26A184B900DED2B6 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -113,6 +117,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA01AFE026B1F678008962BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D3A3926A8BB100005B6EA /* DetailCustomView */,
+				AA73690726A318C2004EE193 /* CustomView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA01AFE126B1F708008962BF /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				AA7B704326A0D16C00278F67 /* MainViewController.swift */,
+				AAC02B0726A4AE820095632E /* DailyCell */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		AA01AFE226B1F72E008962BF /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				AA56FE8C26A75295000BAA15 /* DetailViewController.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		AA01AFE526B1F9CC008962BF /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				AA01AFE626B1F9E3008962BF /* TodayString.swift */,
+				AA01AFE826B203C1008962BF /* GetWeek.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		AA1B692D26AD8F58007FF887 /* OpenWeatherApi */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				AA56FE8A26A75225000BAA15 /* GetViewControllerByID.swift */,
-				AA83F87526AC2F8E00A69D26 /* Realm.safeWrite.swift */,
 				AA60ABDC26ADFDEF00C6CC54 /* UIImageView+Load.swift */,
 				AA207A3126B030C800DA2E47 /* Date.dayNumberOfWeek .swift */,
 			);
@@ -180,14 +218,13 @@
 		AA7B703E26A0D16C00278F67 /* KeepSolidApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA01AFE526B1F9CC008962BF /* Date */,
+				AA01AFE026B1F678008962BF /* Views */,
 				AA1B692D26AD8F58007FF887 /* OpenWeatherApi */,
 				AA83F87726AC2FBF00A69D26 /* Realm */,
-				AA3D3A3926A8BB100005B6EA /* DetailCustomView */,
 				AABAB71F26A75D6C00120095 /* other */,
 				AA56FE8926A75200000BAA15 /* Extension */,
-				AAC02B0726A4AE820095632E /* DailyCell */,
-				AA73690726A318C2004EE193 /* CustomView */,
-				AAF36CC226A1E77F00227BC0 /* Controllers */,
+				AAF36CC226A1E77F00227BC0 /* ViewControllers */,
 				AAF5908C26A184B900DED2B6 /* fonts */,
 				AA7B704826A0D16D00278F67 /* Assets.xcassets */,
 				AA7B704526A0D16C00278F67 /* Main.storyboard */,
@@ -224,13 +261,14 @@
 			path = DailyCell;
 			sourceTree = "<group>";
 		};
-		AAF36CC226A1E77F00227BC0 /* Controllers */ = {
+		AAF36CC226A1E77F00227BC0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AA7B704326A0D16C00278F67 /* MainViewController.swift */,
-				AA56FE8C26A75295000BAA15 /* DetailViewController.swift */,
+				AA01AFE226B1F72E008962BF /* DetailVC */,
+				AA01AFE126B1F708008962BF /* MainVC */,
+				AA01AFE326B1F837008962BF /* SetupViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		AAF5908C26A184B900DED2B6 /* fonts */ = {
@@ -364,14 +402,16 @@
 				AA73690626A3186C004EE193 /* DailyShortView.swift in Sources */,
 				AA1B693126AD99F5007FF887 /* SetData.swift in Sources */,
 				AA7B704026A0D16C00278F67 /* AppDelegate.swift in Sources */,
+				AA01AFE926B203C1008962BF /* GetWeek.swift in Sources */,
 				AA3D3A3B26A8BC920005B6EA /* DetailCustomView.swift in Sources */,
 				AA62B85726A9CE65007079DF /* CurrentModel.swift in Sources */,
+				AA01AFE726B1F9E3008962BF /* TodayString.swift in Sources */,
 				AA60ABDD26ADFDEF00C6CC54 /* UIImageView+Load.swift in Sources */,
 				AA7B704226A0D16C00278F67 /* SceneDelegate.swift in Sources */,
+				AA01AFE426B1F837008962BF /* SetupViewController.swift in Sources */,
 				AA62B85926A9CEC4007079DF /* MainModel.swift in Sources */,
 				AA1B692C26AD801D007FF887 /* Response.swift in Sources */,
 				AA56FE8B26A75225000BAA15 /* GetViewControllerByID.swift in Sources */,
-				AA83F87626AC2F8E00A69D26 /* Realm.safeWrite.swift in Sources */,
 				AA207A3226B030C800DA2E47 /* Date.dayNumberOfWeek .swift in Sources */,
 				AA1B692F26AD8F98007FF887 /* ApiRequest.swift in Sources */,
 				AA56FE8D26A75295000BAA15 /* DetailViewController.swift in Sources */,

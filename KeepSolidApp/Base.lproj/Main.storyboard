@@ -232,6 +232,24 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91W-pA-MwO">
+                                        <rect key="frame" x="0.0" y="-135" width="417" height="741"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-xv-7F2">
+                                                <rect key="frame" x="0.0" y="407" width="417" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="oQv-fO-iI3">
+                                                <rect key="frame" x="198" y="360" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -259,6 +277,7 @@
                         <outlet property="unitsView" destination="7Sv-5J-yfR" id="sCN-bc-iG3"/>
                         <outlet property="uvindexDesc" destination="ERs-GB-0iT" id="uPz-Kl-7Dd"/>
                         <outlet property="uvindexValue" destination="D5R-GR-KpU" id="Ijj-5g-WUs"/>
+                        <outlet property="waitScreen" destination="91W-pA-MwO" id="JNB-xX-FyR"/>
                         <outlet property="windDesc" destination="HQq-eQ-l0c" id="zyR-6P-mSh"/>
                         <outlet property="windValue" destination="1lG-Xd-5HX" id="rmi-mJ-ofx"/>
                     </connections>

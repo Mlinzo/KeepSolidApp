@@ -8,11 +8,11 @@
 import Foundation
 import RealmSwift
 
-let realm = try! Realm()
-var currentModel = CurrentModel()
-var mainModel = MainModel()
+func setData(data: Response, sender: MainViewController) -> Void {
+    let realm = try! Realm()
+    let currentModel = CurrentModel()
+    let mainModel = MainModel()
     
-func setData(data: Response) -> Void {
     currentModel.temp = Float(data.current.temp)
     currentModel.uvIndex = Float(data.current.uvi)
     currentModel.weatherIcon = data.current.weather[0].icon
@@ -51,4 +51,5 @@ func setData(data: Response) -> Void {
         realm.add(mainModel)
     }
     
+    setupViewController(sender)
 }
