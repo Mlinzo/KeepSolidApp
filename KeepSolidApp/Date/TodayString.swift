@@ -7,9 +7,11 @@
 
 import Foundation
 
-func todayString()->String{
+func todayString(locale:String)->String{
     let today =  DateFormatter()
-    today.dateStyle = .medium
+    today.dateStyle = .long
     today.timeStyle = .none
+    today.dateFormat = "dd MMMM yyyy"
+    today.locale = Locale(identifier: locale)
     return today.string(from: Date())
 }

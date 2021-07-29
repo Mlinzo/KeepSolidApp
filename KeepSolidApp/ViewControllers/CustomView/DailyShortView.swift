@@ -35,6 +35,6 @@ class DailyShortView: UIView{
         let url = URL(string: "http://openweathermap.org/img/w/\(image).png")
         self.imageView.load(url: url!)
         self.tempLabel.text = String(format: "%.0f%@", temp, "\u{00B0}")
-        self.deskLabel.text = desc
+        self.deskLabel.text = String(format: "| %@", desc)
     }
 }

@@ -22,7 +22,6 @@ func setData(data: Response, sender: MainViewController) -> Void {
     currentModel.pressure = data.current.pressure
     
     mainModel.current = currentModel
-    
     for i in 0...6{
         let dailyModel = DailyModel()
         
@@ -45,11 +44,11 @@ func setData(data: Response, sender: MainViewController) -> Void {
         
         mainModel.daily.append(dailyModel)
     }
-
     try! realm.write{
         realm.deleteAll()
         realm.add(mainModel)
     }
-    
-    setupViewController(sender)
+    DispatchQueue.main.async {
+        setupViewController(sender)
+    }
 }

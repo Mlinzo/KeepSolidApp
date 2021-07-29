@@ -13,6 +13,6 @@ class CurrentModel: Object {
     @Persisted var weatherIcon: String = "" //String????
     @Persisted var weatherDesc: String = ""
     @Persisted var humidity: Int = 0
-    @Persisted var windSpeed: Int = 0
+    @Persisted var windSpeed: Double = 0
     @Persisted var pressure: Int = 0
 }

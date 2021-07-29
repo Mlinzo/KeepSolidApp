@@ -7,9 +7,12 @@
 
 import Foundation
 
-func getData(from url: String, sender: MainViewController){
-    let dataTask = URLSession.shared.dataTask(with: URL(string: url)!){ data, _, _ in
+func getData(sender: MainViewController){
+    
+    let url = buildURL()
+    let dataTask = URLSession.shared.dataTask(with: url){ data, _, _ in
         guard let jsonData = data else{
+            print("data do not gathered")
             return
         }
         do {
