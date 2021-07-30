@@ -34,6 +34,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var pressureImage: UIImageView!
     @IBOutlet weak var pressureValue: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var detailNavBar: UINavigationItem!
+    @IBOutlet weak var detailBackButon: UIBarButtonItem!
     
     var dayIndex: Int?
     var day: String?
@@ -43,32 +45,10 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = realm.objects(MainModel.self)
-        
-        afternoonView.timeLabel.text = "Afternoon"
-        eveningView.timeLabel.text = "Evening"
-        nightView.timeLabel.text = "Night"
-
-        if items.count != 0 {
-            dailyView.setupView(desc: items[0].daily[dayIndex!].weatherDesc, temp: items[0].daily[dayIndex!].dayTemp, image: items[0].daily[dayIndex!].weatherIcon)
-            
-            morningView.setupView(feels: items[0].daily[dayIndex!].mornfeelsTemp, temp: items[0].daily[dayIndex!].mornTemp, backgroundImage: "morningrect")
-            afternoonView.setupView(feels: items[0].daily[dayIndex!].dayfeelsTemp, temp: items[0].daily[dayIndex!].dayTemp, backgroundImage: "afternoonrect")
-            eveningView.setupView(feels: items[0].daily[dayIndex!].evefeelsTemp, temp: items[0].daily[dayIndex!].eveTemp, backgroundImage: "eveningrect")
-            nightView.setupView(feels: items[0].daily[dayIndex!].nightfeelsTemp, temp: items[0].daily[dayIndex!].nightTemp, backgroundImage: "nightrect")
-            
-            humidityValue.text = String(items[0].daily[dayIndex!].humidity)+"%"
-            windValue.text = String(items[0].daily[dayIndex!].wind)+" kmh"
-            uvindexValue.text = String(items[0].daily[dayIndex!].uvindex)
-            pressureValue.text = String(items[0].daily[dayIndex!].pressure)+" hPa"
-            
-            minValue.text = String(Int(items[0].daily[dayIndex!].minTemp))+"\u{00B0}"
-            maxValue.text = String(Int(items[0].daily[dayIndex!].maxTemp))+"\u{00B0}"
-        
+            setupDetViewController(self)
         }
-        
-        headLabel.text = day!
-        
+    
+    @IBAction func backClick(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
     }
-
 }

@@ -16,7 +16,7 @@ final class UserSettings{
         case defaultUnitsAPI
         case dateLocale
     }
-    
+
     static var defaultUnitsAPI: String?{
         get{
             return UserDefaults.standard.string(forKey: SettingsKeys.defaultUnitsAPI.rawValue)

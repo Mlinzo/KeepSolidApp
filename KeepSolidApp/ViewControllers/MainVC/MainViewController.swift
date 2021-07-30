@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import CoreLocation
 
 class MainViewController: UIViewController {
 
@@ -45,6 +46,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var skipButton: UIBarButtonItem!
     
     @IBOutlet weak var waitScreen: UIView!
+    @IBOutlet weak var waitScreenLabel: UILabel!
+    @IBOutlet weak var waitScreenIndicator: UIActivityIndicatorView!
+    
+    private var locationManager: CLLocationManager?
     
     let realm = try! Realm()
     var items: Results<MainModel>!
@@ -61,7 +66,6 @@ class MainViewController: UIViewController {
             settingsOnScreen = false
             yPosition += 626
         }
-        
         let width = settingsView.frame.size.width
         let height = settingsView.frame.size.height
         UIView.animate(withDuration: animationTime, animations: {
@@ -73,15 +77,10 @@ class MainViewController: UIViewController {
         detailPicker.isHidden = !show
         detailNavBar.isHidden = !show
     }
-    
-    override func loadView() {
-        super.loadView()
-        getData( sender: self)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(realm.configuration.fileURL!)
         items = realm.objects(MainModel.self)
-        
         if UserSettings.defaultLanguage == nil {
             UserSettings.defaultLanguage = "English"
         }
@@ -89,17 +88,25 @@ class MainViewController: UIViewController {
             UserSettings.defaultUnits = LocalisedData.shared.defLang?.settingsPickerUnitTitle[1]
         }
         
-        changePositionOfSettingsView(direction: "down", animationTime: 0)
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.startUpdatingLocation()
         
+        changePositionOfSettingsView(direction: "down", animationTime: 0)
         dailyCollection.register(UINib(nibName: "DailyCell", bundle: nil), forCellWithReuseIdentifier: "DailyCell")
         dailyCollection.dataSource = self
         dailyCollection.delegate = self
         detailPicker.dataSource = self
         detailPicker.delegate = self
+        
+        
+        waitScreen.isHidden = false
+        waitScreenIndicator.isHidden = true
+        waitScreenLabel.text = "Location not allowed"
+        
         if items.count != 0 {
-            setupViewController(self)
-        }else{
-            waitScreen.isHidden = false
+            setupMainViewController(self)
         }
     }
     
@@ -123,7 +130,10 @@ class MainViewController: UIViewController {
         UserSettings.defaultLanguage = languageValue.text
         UserSettings.defaultUnits = unitsValue.text
         waitScreen.isHidden = false
-        getData( sender: self)
+        if let lon = NetworkManager.shared.lon, let lat = NetworkManager.shared.lat{
+            NetworkManager.shared.getData( sender: self)
+        }
+
     }
     
     @IBAction func settingsCancelClick(_ sender: Any) {
@@ -147,7 +157,6 @@ class MainViewController: UIViewController {
         currentPicker = "language"
         showPicker(true)
     }
-    
     
     @IBAction func pickerSkipClicked(_ sender: Any) {
         showPicker(false)
@@ -212,5 +221,24 @@ extension MainViewController: UIPickerViewDelegate{
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentPickerRow = row
+    }
+}
+//MARK: -- ViewController: CLLocationManagerDelegate
+extension MainViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let loc = locations.last {
+            let lat = String(format: "%.4f", loc.coordinate.latitude)
+            let lon = String(format: "%.4f", loc.coordinate.longitude)
+            NetworkManager.shared.lon = lon
+            NetworkManager.shared.lat = lat
+            print(lon, lat)
+            if let lo = NetworkManager.shared.lon, let la = NetworkManager.shared.lat{
+                NetworkManager.shared.getData( sender: self)
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
 }

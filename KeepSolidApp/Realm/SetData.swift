@@ -49,6 +49,6 @@ func setData(data: Response, sender: MainViewController) -> Void {
         realm.add(mainModel)
     }
     DispatchQueue.main.async {
-        setupViewController(sender)
+        setupMainViewController(sender)
     }
 }

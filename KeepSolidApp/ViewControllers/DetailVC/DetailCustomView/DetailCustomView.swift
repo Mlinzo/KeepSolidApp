@@ -32,10 +32,13 @@ class DetailCustomView: UIView {
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
-    func setupView(feels: Float, temp: Float, backgroundImage: String) -> Void {
+    func setupView(feels: Float, feelsLabel: String, temp: Float, tempLabel: String, backgroundImage: String, dayPeriod: String){
         self.background.image = UIImage(named: backgroundImage)
         self.tempValue.text = String(format: "%0.0f%@", temp,"\u{00B0}")
         self.feelsValue.text = String(format: "%0.0f%@", feels,"\u{00B0}")
+        self.timeLabel.text = dayPeriod
+        self.tempText.text = tempLabel
+        self.feelsText.text = feelsLabel
     }
 }
 

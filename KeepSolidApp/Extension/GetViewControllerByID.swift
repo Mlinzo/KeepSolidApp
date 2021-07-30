@@ -6,9 +6,8 @@
 //
 import UIKit
 
-extension UIViewController {
-    func getViewControllerByID(_ id: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        return storyboard.instantiateViewController(identifier: id)
-    }
+
+func getViewControllerByID(_ id: String) -> UIViewController {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    return storyboard.instantiateViewController(identifier: id)
 }

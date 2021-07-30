@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA01AFE426B1F837008962BF /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01AFE326B1F837008962BF /* SetupViewController.swift */; };
+		AA01AFE426B1F837008962BF /* SetupMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01AFE326B1F837008962BF /* SetupMainViewController.swift */; };
 		AA01AFE726B1F9E3008962BF /* TodayString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01AFE626B1F9E3008962BF /* TodayString.swift */; };
 		AA01AFE926B203C1008962BF /* GetWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01AFE826B203C1008962BF /* GetWeek.swift */; };
 		AA1B692C26AD801D007FF887 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692B26AD801D007FF887 /* Response.swift */; };
-		AA1B692F26AD8F98007FF887 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692E26AD8F98007FF887 /* ApiRequest.swift */; };
+		AA1B692F26AD8F98007FF887 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B692E26AD8F98007FF887 /* NetworkManager.swift */; };
 		AA1B693126AD99F5007FF887 /* SetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B693026AD99F5007FF887 /* SetData.swift */; };
 		AA207A3226B030C800DA2E47 /* Date.dayNumberOfWeek .swift in Sources */ = {isa = PBXBuildFile; fileRef = AA207A3126B030C800DA2E47 /* Date.dayNumberOfWeek .swift */; };
 		AA3D3A3626A8A3340005B6EA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA3D3A3526A8A3340005B6EA /* RealmSwift */; };
@@ -37,16 +37,17 @@
 		AAA03E1926B324C2006377A0 /* BuildURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA03E1826B324C2006377A0 /* BuildURL.swift */; };
 		AAC02B0A26A4AEAF0095632E /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC02B0826A4AEAF0095632E /* DailyCell.swift */; };
 		AAC02B0B26A4AEAF0095632E /* DailyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC02B0926A4AEAF0095632E /* DailyCell.xib */; };
+		AAE4A94926B3D5DB00B88044 /* SetupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4A94826B3D5DB00B88044 /* SetupDetailViewController.swift */; };
 		AAF590AA26A184BA00DED2B6 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF5909726A184B900DED2B6 /* Montserrat-SemiBold.ttf */; };
 		AAF590AF26A184BA00DED2B6 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAF5909C26A184B900DED2B6 /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA01AFE326B1F837008962BF /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		AA01AFE326B1F837008962BF /* SetupMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupMainViewController.swift; sourceTree = "<group>"; };
 		AA01AFE626B1F9E3008962BF /* TodayString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayString.swift; sourceTree = "<group>"; };
 		AA01AFE826B203C1008962BF /* GetWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeek.swift; sourceTree = "<group>"; };
 		AA1B692B26AD801D007FF887 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		AA1B692E26AD8F98007FF887 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		AA1B692E26AD8F98007FF887 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AA1B693026AD99F5007FF887 /* SetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetData.swift; sourceTree = "<group>"; };
 		AA207A3126B030C800DA2E47 /* Date.dayNumberOfWeek .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date.dayNumberOfWeek .swift"; sourceTree = "<group>"; };
 		AA3D3A3A26A8BC920005B6EA /* DetailCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCustomView.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		AAA03E1826B324C2006377A0 /* BuildURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildURL.swift; sourceTree = "<group>"; };
 		AAC02B0826A4AEAF0095632E /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		AAC02B0926A4AEAF0095632E /* DailyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCell.xib; sourceTree = "<group>"; };
+		AAE4A94826B3D5DB00B88044 /* SetupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDetailViewController.swift; sourceTree = "<group>"; };
 		AAF5909726A184B900DED2B6 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		AAF5909C26A184B900DED2B6 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 		AA01AFE126B1F708008962BF /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
+				AA01AFE326B1F837008962BF /* SetupMainViewController.swift */,
 				AA7B704326A0D16C00278F67 /* MainViewController.swift */,
 				AAC02B0726A4AE820095632E /* DailyCollectionviewCell */,
 			);
@@ -106,6 +109,7 @@
 			children = (
 				AA3D3A3926A8BB100005B6EA /* DetailCustomView */,
 				AA56FE8C26A75295000BAA15 /* DetailViewController.swift */,
+				AAE4A94826B3D5DB00B88044 /* SetupDetailViewController.swift */,
 			);
 			path = DetailVC;
 			sourceTree = "<group>";
@@ -123,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				AA1B692B26AD801D007FF887 /* Response.swift */,
-				AA1B692E26AD8F98007FF887 /* ApiRequest.swift */,
 				AAA03E1826B324C2006377A0 /* BuildURL.swift */,
 			);
 			path = OpenWeatherApi;
@@ -234,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA03E1626B2FBD4006377A0 /* UserSettings.swift */,
+				AA1B692E26AD8F98007FF887 /* NetworkManager.swift */,
 			);
 			path = Defaults;
 			sourceTree = "<group>";
@@ -263,7 +267,6 @@
 				AAA03E0F26B29E10006377A0 /* LocalisedData.swift */,
 				AA01AFE226B1F72E008962BF /* DetailVC */,
 				AA01AFE126B1F708008962BF /* MainVC */,
-				AA01AFE326B1F837008962BF /* SetupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -374,13 +377,14 @@
 				AA01AFE726B1F9E3008962BF /* TodayString.swift in Sources */,
 				AA60ABDD26ADFDEF00C6CC54 /* UIImageView+Load.swift in Sources */,
 				AA7B704226A0D16C00278F67 /* SceneDelegate.swift in Sources */,
-				AA01AFE426B1F837008962BF /* SetupViewController.swift in Sources */,
+				AA01AFE426B1F837008962BF /* SetupMainViewController.swift in Sources */,
 				AA62B85926A9CEC4007079DF /* MainModel.swift in Sources */,
 				AA1B692C26AD801D007FF887 /* Response.swift in Sources */,
 				AA56FE8B26A75225000BAA15 /* GetViewControllerByID.swift in Sources */,
 				AA207A3226B030C800DA2E47 /* Date.dayNumberOfWeek .swift in Sources */,
-				AA1B692F26AD8F98007FF887 /* ApiRequest.swift in Sources */,
+				AA1B692F26AD8F98007FF887 /* NetworkManager.swift in Sources */,
 				AA56FE8D26A75295000BAA15 /* DetailViewController.swift in Sources */,
+				AAE4A94926B3D5DB00B88044 /* SetupDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
