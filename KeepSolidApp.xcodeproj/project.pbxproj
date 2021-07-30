@@ -35,6 +35,10 @@
 		AAA03E1026B29E10006377A0 /* LocalisedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA03E0F26B29E10006377A0 /* LocalisedData.swift */; };
 		AAA03E1726B2FBD4006377A0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA03E1626B2FBD4006377A0 /* UserSettings.swift */; };
 		AAA03E1926B324C2006377A0 /* BuildURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA03E1826B324C2006377A0 /* BuildURL.swift */; };
+		AAAC4B6E26B4608F00E64E26 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC4B6D26B4608F00E64E26 /* UICollectionView.swift */; };
+		AAAC4B7026B4618500E64E26 /* UIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC4B6F26B4618500E64E26 /* UIPickerView.swift */; };
+		AAAC4B7226B461D300E64E26 /* CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC4B7126B461D300E64E26 /* CLLocationManager.swift */; };
+		AAAC4B7626B46C0300E64E26 /* AlertLocationDenied.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC4B7526B46C0300E64E26 /* AlertLocationDenied.swift */; };
 		AAC02B0A26A4AEAF0095632E /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC02B0826A4AEAF0095632E /* DailyCell.swift */; };
 		AAC02B0B26A4AEAF0095632E /* DailyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC02B0926A4AEAF0095632E /* DailyCell.xib */; };
 		AAE4A94926B3D5DB00B88044 /* SetupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4A94826B3D5DB00B88044 /* SetupDetailViewController.swift */; };
@@ -74,6 +78,10 @@
 		AAA03E1526B2EA88006377A0 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		AAA03E1626B2FBD4006377A0 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		AAA03E1826B324C2006377A0 /* BuildURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildURL.swift; sourceTree = "<group>"; };
+		AAAC4B6D26B4608F00E64E26 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		AAAC4B6F26B4618500E64E26 /* UIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerView.swift; sourceTree = "<group>"; };
+		AAAC4B7126B461D300E64E26 /* CLLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManager.swift; sourceTree = "<group>"; };
+		AAAC4B7526B46C0300E64E26 /* AlertLocationDenied.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertLocationDenied.swift; sourceTree = "<group>"; };
 		AAC02B0826A4AEAF0095632E /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		AAC02B0926A4AEAF0095632E /* DailyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCell.xib; sourceTree = "<group>"; };
 		AAE4A94826B3D5DB00B88044 /* SetupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupDetailViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +105,12 @@
 		AA01AFE126B1F708008962BF /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
+				AAAC4B6C26B45FFB00E64E26 /* Extensions */,
+				AAAC4B6B26B45FE900E64E26 /* SettingsView */,
 				AA01AFE326B1F837008962BF /* SetupMainViewController.swift */,
 				AA7B704326A0D16C00278F67 /* MainViewController.swift */,
 				AAC02B0726A4AE820095632E /* DailyCollectionviewCell */,
+				AAAC4B7526B46C0300E64E26 /* AlertLocationDenied.swift */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -242,6 +253,23 @@
 			path = Defaults;
 			sourceTree = "<group>";
 		};
+		AAAC4B6B26B45FE900E64E26 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		AAAC4B6C26B45FFB00E64E26 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AAAC4B6D26B4608F00E64E26 /* UICollectionView.swift */,
+				AAAC4B6F26B4618500E64E26 /* UIPickerView.swift */,
+				AAAC4B7126B461D300E64E26 /* CLLocationManager.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AABAB71F26A75D6C00120095 /* DefaultDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,10 +392,12 @@
 			files = (
 				AAA03E1926B324C2006377A0 /* BuildURL.swift in Sources */,
 				AA7B704426A0D16C00278F67 /* MainViewController.swift in Sources */,
+				AAAC4B7626B46C0300E64E26 /* AlertLocationDenied.swift in Sources */,
 				AA62B85526A9CE52007079DF /* DailyModel.swift in Sources */,
 				AAC02B0A26A4AEAF0095632E /* DailyCell.swift in Sources */,
 				AA73690626A3186C004EE193 /* DailyShortView.swift in Sources */,
 				AAA03E1726B2FBD4006377A0 /* UserSettings.swift in Sources */,
+				AAAC4B6E26B4608F00E64E26 /* UICollectionView.swift in Sources */,
 				AA1B693126AD99F5007FF887 /* SetData.swift in Sources */,
 				AA7B704026A0D16C00278F67 /* AppDelegate.swift in Sources */,
 				AA01AFE926B203C1008962BF /* GetWeek.swift in Sources */,
@@ -376,6 +406,7 @@
 				AA62B85726A9CE65007079DF /* CurrentModel.swift in Sources */,
 				AA01AFE726B1F9E3008962BF /* TodayString.swift in Sources */,
 				AA60ABDD26ADFDEF00C6CC54 /* UIImageView+Load.swift in Sources */,
+				AAAC4B7026B4618500E64E26 /* UIPickerView.swift in Sources */,
 				AA7B704226A0D16C00278F67 /* SceneDelegate.swift in Sources */,
 				AA01AFE426B1F837008962BF /* SetupMainViewController.swift in Sources */,
 				AA62B85926A9CEC4007079DF /* MainModel.swift in Sources */,
@@ -385,6 +416,7 @@
 				AA1B692F26AD8F98007FF887 /* NetworkManager.swift in Sources */,
 				AA56FE8D26A75295000BAA15 /* DetailViewController.swift in Sources */,
 				AAE4A94926B3D5DB00B88044 /* SetupDetailViewController.swift in Sources */,
+				AAAC4B7226B461D300E64E26 /* CLLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

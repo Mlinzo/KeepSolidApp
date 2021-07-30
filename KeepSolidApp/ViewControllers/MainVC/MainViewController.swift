@@ -49,12 +49,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var waitScreenLabel: UILabel!
     @IBOutlet weak var waitScreenIndicator: UIActivityIndicatorView!
     
-    private var locationManager: CLLocationManager?
+    var locationManager: CLLocationManager?
     
     let realm = try! Realm()
     var items: Results<MainModel>!
     
-    var settingsOnScreen = false
+    var settingsOnScreen: Bool!
     
     func changePositionOfSettingsView(direction: String, animationTime: TimeInterval){
         var yPosition = settingsView.frame.origin.y
@@ -77,36 +77,41 @@ class MainViewController: UIViewController {
         detailPicker.isHidden = !show
         detailNavBar.isHidden = !show
     }
+    
+    func getLocation(){
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.startUpdatingLocation()
+    }
+    
+    func setLocationErrorView(){
+        waitScreen.isHidden = false
+        waitScreenIndicator.isHidden = true
+        waitScreenLabel.text = "Location not established"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(realm.configuration.fileURL!)
+        
+        getLocation()
+        
+        changePositionOfSettingsView(direction: "down", animationTime: 0)
+        dailyCollection.register(UINib(nibName: "DailyCell", bundle: nil), forCellWithReuseIdentifier: "DailyCell")
+        
+        locationManager?.delegate = self
+        dailyCollection.dataSource = self
+        dailyCollection.delegate = self
+        detailPicker.dataSource = self
+        detailPicker.delegate = self
+        
+        setLocationErrorView()
+        
         items = realm.objects(MainModel.self)
         if UserSettings.defaultLanguage == nil {
             UserSettings.defaultLanguage = "English"
         }
         if UserSettings.defaultUnits == nil {
             UserSettings.defaultUnits = LocalisedData.shared.defLang?.settingsPickerUnitTitle[1]
-        }
-        
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestWhenInUseAuthorization()
-        locationManager?.startUpdatingLocation()
-        
-        changePositionOfSettingsView(direction: "down", animationTime: 0)
-        dailyCollection.register(UINib(nibName: "DailyCell", bundle: nil), forCellWithReuseIdentifier: "DailyCell")
-        dailyCollection.dataSource = self
-        dailyCollection.delegate = self
-        detailPicker.dataSource = self
-        detailPicker.delegate = self
-        
-        
-        waitScreen.isHidden = false
-        waitScreenIndicator.isHidden = true
-        waitScreenLabel.text = "Location not allowed"
-        
-        if items.count != 0 {
-            setupMainViewController(self)
         }
     }
     
@@ -174,71 +179,4 @@ class MainViewController: UIViewController {
         showPicker(false)
     }
     
-}
-//MARK: - MainViewController: UICollectionViewDataSource
-extension MainViewController: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let weekDate = getWeek(locale: UserSettings.dateLocale ?? "en_EN")
-
-        let cell = dailyCollection.dequeueReusableCell(withReuseIdentifier: "DailyCell", for: indexPath) as! DailyCell
-        if items.count != 0 {
-            cell.setupCell(image: items[0].daily[indexPath.item].weatherIcon, temp: items[0].daily[indexPath.item].dayTemp, date: weekDate[indexPath.item])
-        }
-        return cell
-    }
-    
-}
-//MARK: -- MainViewController: UICollectionViewDelegate
-extension MainViewController: UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let weekDate = getWeek(locale: UserSettings.dateLocale ?? "en_EN")
-        let vc = getViewControllerByID("detailVC") as! DetailViewController
-        vc.dayIndex = indexPath.item
-        vc.day = weekDate[indexPath.item]
-        navigationController?.show(vc, sender: self)
-        
-    }
-}
-//MARK: -- MainViewController: UIPickerViewDataSource
-extension MainViewController: UIPickerViewDataSource{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerTitle.count
-    }
-}
-//MARK: -- MainViewController: UIPickerViewDelegate
-extension MainViewController: UIPickerViewDelegate{
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
-        return pickerTitle[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currentPickerRow = row
-    }
-}
-//MARK: -- ViewController: CLLocationManagerDelegate
-extension MainViewController: CLLocationManagerDelegate{
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let loc = locations.last {
-            let lat = String(format: "%.4f", loc.coordinate.latitude)
-            let lon = String(format: "%.4f", loc.coordinate.longitude)
-            NetworkManager.shared.lon = lon
-            NetworkManager.shared.lat = lat
-            print(lon, lat)
-            if let lo = NetworkManager.shared.lon, let la = NetworkManager.shared.lat{
-                NetworkManager.shared.getData( sender: self)
-            }
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-    }
 }
