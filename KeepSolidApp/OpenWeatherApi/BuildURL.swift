@@ -37,6 +37,6 @@ func buildURL() -> URL {
         language = Lang.en.rawValue
     }
     
-    let url = "https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lon)&units=\(units)&lang=\(language)&exclude=hourly,minutely&appid=\(appid)" //"https://api.openweathermap.org/data/2.5/onecall?lat=46.4775&lon=30.7326&units=metric&lang=en&exclude=hourly,minutely&appid=0ef853635aef314bc8966ae105fa06fd"
+    let url = "https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lon)&units=\(units)&lang=\(language)&exclude=hourly,minutely&appid=\(appid)" 
     return URL(string: url)!
 }

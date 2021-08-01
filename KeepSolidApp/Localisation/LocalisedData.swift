@@ -44,6 +44,7 @@ final class LocalisedData{
     var uaData = LangData(humidityTitle: "Вологість", uvindexTitle: "УФ-індекс", windTitle: "Вітер", weekTitle: "7 днів", settingsCancelButtonTitle: "Скасувати", settingsDoneButtonTitle: "Готово", settingsTitle: "Налаштування", settingsUnitsTitle: "Одиниці виміру", settingsLanguageTitle: "Мова", settingsPickerSkipButtonTitle: "Пропустити", settingsPickerDoneButtonTitle: "Готово", windSpeedUnits: ["м/c","миль/год"], settingsPickerUnitTitle: ["Стандартні", "Метричні","Імперські"], settingsPickerLanguageTitle: ["Англійська", "Українська", "Російська"], waitScreen: "Будь ласка, зачекайте", minLabel: "Мін:", maxLabel: "Макс:", dayPeriod: ["Ранок", "Полудень", "Вечір", "Ніч"], detailBackButton: "Повернутися", tempLabel: "Темп:", feelsLabel: "Відч:", pressureLabel: "Тиск", detailsLabel: "Деталі", pressureUnits: "гПа")
     
     var ruData = LangData(humidityTitle: "Влажность", uvindexTitle: "УФ-индекс", windTitle: "Ветер", weekTitle: "7 дней", settingsCancelButtonTitle: "Отмена", settingsDoneButtonTitle: "Готово", settingsTitle: "Настройки", settingsUnitsTitle: "Единицы измерения", settingsLanguageTitle: "Язык", settingsPickerSkipButtonTitle: "Пропустить", settingsPickerDoneButtonTitle: "Готово", windSpeedUnits:["м/c", "миль/ч"], settingsPickerUnitTitle: ["Стандартные", "Метрические", "Имперские"], settingsPickerLanguageTitle: ["Английский", "Украинский", "Русский"], waitScreen: "Пожалуйста, подождите", minLabel: "Мин:", maxLabel: "Макс:", dayPeriod: ["Утро", "Полдень", "Вечер", "Ночь"], detailBackButton: "Назад", tempLabel: "Темп:", feelsLabel: "Ощущ:", pressureLabel: "Давление", detailsLabel: "Детали", pressureUnits: "гПа")
+    
     var defLang: LangData?{
         set{}
         get{
@@ -60,6 +61,4 @@ final class LocalisedData{
             return enData
         }
     }
-    
-    
 }

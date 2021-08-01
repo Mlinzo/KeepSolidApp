@@ -47,8 +47,4 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
             setupDetViewController(self)
         }
-    
-    @IBAction func backClick(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
 }

@@ -26,8 +26,9 @@ extension MainViewController: CLLocationManagerDelegate{
         debugPrint("location error - ",error)
         if CLLocationManager.locationServicesEnabled() {
             switch locationManager?.authorizationStatus{
-                case .denied, .restricted: alertLocationDenied()
-                case .authorizedAlways, .authorizedWhenInUse, .notDetermined: break
+            case .denied: alertLocationDenied()
+            case .restricted, .notDetermined: break
+                case .authorizedAlways, .authorizedWhenInUse: break
                 default: break
             }
         }
